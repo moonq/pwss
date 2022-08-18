@@ -1,10 +1,20 @@
+# Expose this port outside
 EXPOSE=8088
+# User ID of files ownership
 UUID=1000
+# How long a password is valid
 SESSION_EXPIRY=1800
+# Secret key to encrypt cookies (CHANGE!)
 SECRET_KEY=2f6aa45dfcfc37a50537f0b05af6452c
+# Config files location (/data hardcoded in docker-compose.yaml)
 CONFIG_FOLDER=/data/configs
+# Served files location (/data hardcoded in docker-compose.yaml)
 STATIC_FOLDER=/data/static
-DATABASE=/dev/shm/serve.db
+# Password login sessions database, in memory for speed, /data/configs/sessions.db for keeping over restarts
+DATABASE=/dev/shm/sessions.db
+# Number of processes serving files
 WORKERS=6
+# Timezone
 TZ=Europe/Helsinki
+# Limiter rule, as serving over flask is not optimal..
 LIMITER_SHARE=200 per 5 seconds
