@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+mkdir -p data
+docker-compose build
+docker-compose up -d -t 0
+docker-compose logs -f

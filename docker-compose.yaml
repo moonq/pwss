@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  pwss:
+    build:
+      context: docker-pwss
+      args:
+        - UUID
+        - TZ
+    image: pwss
+    volumes:
+      - ./data/:/data/
+    environment:
+      - UUID
+      - SESSION_EXPIRY
+      - SECRET_KEY
+      - DATABASE
+      - WORKERS
+      - CONFIG_FOLDER
+      - STATIC_FOLDER
+      - LIMITER_SHARE
+    ports:
+      - "${EXPOSE}:5000"
+    restart: "unless-stopped"

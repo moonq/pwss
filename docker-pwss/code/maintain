@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. /venv/bin/activate
+set -x
+exec python3 maintain.py

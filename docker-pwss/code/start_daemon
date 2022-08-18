@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+mkdir -p /data/static /data/configs
+cd $( dirname $( readlink -f "$0" ) )
+. /venv/bin/activate
+cat /venv/freeze.txt
+supervisord \
+    -c supervisord.conf \
+    -n \
+    -l /tmp/supervisord.log \
+    -j /tmp/supervisord.pid
+

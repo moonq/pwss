@@ -1,0 +1,10 @@
+EXPOSE=8088
+UUID=1000
+SESSION_EXPIRY=1800
+SECRET_KEY=2f6aa45dfcfc37a50537f0b05af6452c
+CONFIG_FOLDER=/data/configs
+STATIC_FOLDER=/data/static
+DATABASE=/dev/shm/serve.db
+WORKERS=6
+TZ=Europe/Helsinki
+LIMITER_SHARE=200 per 5 seconds

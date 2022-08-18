@@ -1,0 +1,6 @@
+gunicorn
+flask
+flask-limiter[memcached]
+bcrypt
+pymemcache
+supervisor
