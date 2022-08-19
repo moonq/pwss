@@ -69,7 +69,9 @@ def login(folder=None):
 
     if request.method == "POST":
         folder = "".join(
-            letter for letter in request.form["folder"] if letter.isalnum()
+            letter
+            for letter in request.form["folder"]
+            if letter.isalnum() or letter in "-._"
         )
         config = read_config(folder)
         success = authenticate(config, request.form["password"])
